@@ -60,7 +60,21 @@ public class Main {
         }
     }
 
-        public static void main(String[] args) {
+    // Metodo para buscar el pacente en la lista
+    public static Paciente buscarNombrePaciente() {
+        System.out.print("\nIngrese el nombre del paciente: ");
+        String nombrePaciente = scanner.nextLine();
+
+        for (Paciente p : listaPacientes) {
+            if (p.getNombre().equals(nombrePaciente)) {
+                return p;
+            }
+        }
+        System.out.println("\nPaciente inexistente");
+        return null;
+    }
+
+    public static void main(String[] args) {
         int opcion = 0;
 
         do {
@@ -73,7 +87,7 @@ public class Main {
             switch(opcion) {
                 case 1:
                     registrarPacientes();
-                    break;
+                    break;  
             }
 
         } while (opcion != 6);
