@@ -46,7 +46,6 @@ public class Main {
         listaPacientes.add(paciente);
     }
 
-    
     // Metodo para mostrar pacientes registrados
     public static void mostrarPacientesRegistrados() {
         if (listaPacientes.isEmpty()) {

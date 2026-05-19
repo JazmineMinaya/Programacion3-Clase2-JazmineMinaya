@@ -61,4 +61,28 @@ public class Paciente {
         System.out.println("Altura del paciente: " + paciente.getAltura());
         System.out.println("Peso del paciente: " + paciente.getAltura());
     }
+
+    // Metodo para calcular IMC
+    public static float calculoIMC(Paciente paciente) {
+        float resultadoIMC;
+
+        resultadoIMC = paciente.getPeso() / (paciente.getAltura() * paciente.getAltura());
+
+        return resultadoIMC;
+    }
+
+    // Metodo para determinar el estado de peso de un paciente
+    public static void determinarPesoPaciente(Paciente paciente) {
+        float masaCorporal = calculoIMC(paciente);
+
+        if (masaCorporal <= 18.5) {
+            System.out.println("\nEl paciente posee bajo peso");
+        }
+        else if (masaCorporal <= 24.9) {
+            System.out.println("\nEl paciente posee un peso normal");
+        }
+        else {
+            System.out.println("\nEl paciente posee sobrepeso");
+        }
+    }
 }
