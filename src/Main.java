@@ -11,7 +11,7 @@ public class Main {
         System.out.println("                 MENU");
         System.out.println("---------------------------------------");
         System.out.println("  1. Registrar paciente");
-        System.out.println("  2. Mostrar informacion de pacientes");
+        System.out.println("  2. Mostrar informacion de los pacientes");
         System.out.println("  3. Calcular IMC");
         System.out.println("  4. Determinar peso del paciente");
         System.out.println("  5. Mostrar pacientes registrados");
@@ -33,11 +33,11 @@ public class Main {
         System.out.print("Ingrese el sexo del paciente: ");
         String sexo = scanner.nextLine();
 
-        System.out.print("Ingrese la altura del paciente: ");
+        System.out.print("Ingrese la altura del paciente (metros): ");
         float altura = scanner.nextFloat();
         scanner.nextLine();
 
-        System.out.print("Ingrese el peso del paciente: ");
+        System.out.print("Ingrese el peso del paciente (kilogramos): ");
         float peso = scanner.nextFloat();
         scanner.nextLine();
 
@@ -47,6 +47,20 @@ public class Main {
     }
 
     // Metodo para mostrar pacientes registrados
+    public static void mostrarInfoPacientes() {
+        if (listaPacientes.isEmpty()) {
+            System.out.println("\nNo hay pacientes registrados");
+        }
+        else {
+            System.out.println("\n-----Informacion de los Pacientes-----");
+            for (Paciente p : listaPacientes) {
+                Paciente.mostrarDatosPaciente(p);
+            }
+            System.out.println("--------------------------------------");
+        }
+    }
+
+    // Metodo para mostrar la informaciones de los paciente
     public static void mostrarPacientesRegistrados() {
         if (listaPacientes.isEmpty()) {
             System.out.println("\nNo hay pacientes registrados");
@@ -54,7 +68,7 @@ public class Main {
         else {
             System.out.println("\n-------Registro de Pacientes-------");
             for (Paciente p : listaPacientes) {
-                Paciente.mostrarDatosPaciente(p);
+                Paciente.mostrarNombrePaciente(p);
             }
             System.out.println("-----------------------------------");
         }
@@ -87,7 +101,43 @@ public class Main {
             switch(opcion) {
                 case 1:
                     registrarPacientes();
-                    break;  
+                    break;
+                
+                case 2:
+                    mostrarInfoPacientes();
+                    break;
+                
+                case 3:
+                    System.out.println("\nCALCULADORA DE IMC");
+                    Paciente pacienteMasaCorporal = buscarNombrePaciente();
+
+                    if (pacienteMasaCorporal != null) {
+                        float imc = Paciente.calculoIMC(pacienteMasaCorporal);
+
+                        System.out.println("\nEl IMC del paciente es: " + imc);
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("\nDETERMINAR SALUBRIDAD DEL IMC DEL PACIENTE");
+                    Paciente pacientePeso = buscarNombrePaciente();
+
+                    if (pacientePeso != null) {
+
+                        Paciente.determinarPesoPaciente(pacientePeso);
+                    }
+                    break;
+                
+                case 5:
+                    mostrarPacientesRegistrados();
+                    break;
+
+                case 6:
+                    System.out.println("\nCerrando sistema...");
+                    break;
+                
+                default:
+                    System.out.println("\nOpcion invalida");
             }
 
         } while (opcion != 6);

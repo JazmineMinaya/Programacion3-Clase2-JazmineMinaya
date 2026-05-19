@@ -62,6 +62,11 @@ public class Paciente {
         System.out.println("Peso del paciente: " + paciente.getAltura());
     }
 
+    // Metodo para mostrar el nombre del paciente en registro
+    public static void mostrarNombrePaciente(Paciente paciente) {
+        System.out.println(paciente.getNombre());
+    }
+
     // Metodo para calcular IMC
     public static float calculoIMC(Paciente paciente) {
         float resultadoIMC;
