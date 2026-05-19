@@ -52,4 +52,13 @@ public class Paciente {
     public void setPeso(float peso) {
         this.peso = peso;
     }
+
+    //Metodo para mostrar la info de los pacientes
+    public static void mostrarDatosPaciente(Paciente paciente) {
+        System.out.println("\nNombre del paciente: " + paciente.getNombre());
+        System.out.println("Edad del paciente: " + paciente.getEdad());
+        System.out.println("Sexo del paciente: " + paciente.getSexo());
+        System.out.println("Altura del paciente: " + paciente.getAltura());
+        System.out.println("Peso del paciente: " + paciente.getAltura());
+    }
 }

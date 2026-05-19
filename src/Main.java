@@ -46,14 +46,6 @@ public class Main {
         listaPacientes.add(paciente);
     }
 
-    //Metodo para mostrar la info de los paciente
-    public static void mostrarDatosPaciente(Paciente paciente) {
-        System.out.println("\nNombre del paciente: " + paciente.getNombre());
-        System.out.println("Edad del paciente: " + paciente.getEdad());
-        System.out.println("Sexo del paciente: " + paciente.getSexo());
-        System.out.println("Altura del paciente: " + paciente.getAltura());
-        System.out.println("Peso del paciente: " + paciente.getAltura());
-    }
     
     // Metodo para mostrar pacientes registrados
     public static void mostrarPacientesRegistrados() {
