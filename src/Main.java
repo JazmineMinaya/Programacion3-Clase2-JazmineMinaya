@@ -1,5 +1,5 @@
 public class Main {
-    // Metodo pra mostrar menu
+    // Metodo para mostrar menu
     public static void mostrarMenu() {
         System.out.println("\n---------------------------------------");
         System.out.println("                 MENU");
